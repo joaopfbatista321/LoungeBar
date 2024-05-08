@@ -20,5 +20,10 @@
             android:id="@+id/nav_maps"
             android:icon="@drawable/ic_map"
             android:title="@string/menu_maps" />
+        <item
+            android:id="@+id/nav_qr_reader"
+            android:icon="@drawable/ic_qrcode"
+            android:title="@string/QRCode" />
+
     </group>
 </menu>
