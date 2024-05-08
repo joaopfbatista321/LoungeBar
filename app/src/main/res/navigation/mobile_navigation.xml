@@ -22,4 +22,11 @@
         android:name="com.appbar.myapplication.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="com.appbar.myapplication.MapsFragment"
+        android:label="@string/menu_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
