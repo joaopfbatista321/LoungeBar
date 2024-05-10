@@ -10,9 +10,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_maps">Mapa</string>
+    <string name="menu_maps">Map</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="QRCode">QRCode</string>
+    <string name="QRCode" translatable="false">QRCode</string>
     <string name="bem_vindo_ao_lounge">Bem-vindo ao Lounge</string>
 </resources>

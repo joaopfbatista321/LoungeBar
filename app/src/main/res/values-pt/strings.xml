@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoungeBar</string>
+    <string name="menu_home">Pagina Inicial</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_maps">Mapa</string>
+    <string name="bem_vindo_ao_lounge">Bem-vindo ao Lounge</string>
+</resources>

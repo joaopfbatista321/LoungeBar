@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="menu_maps">Mapa</string>
+    <string name="menu_maps">Map</string>
     <string name="QRCode">QRCode</string>
 </resources>
