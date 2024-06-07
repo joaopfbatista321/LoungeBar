@@ -1,7 +1,31 @@
 <resources>
+    <!-- Base application theme. -->
+    <style name="Theme.LoungeBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/graphite_gray</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/burnt_yellow</item>
+        <item name="colorSecondaryVariant">@color/burnt_yellow</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/graphite_gray</item>
+        <item name="android:navigationBarColor">@color/graphite_gray</item>
+    </style>
 
-    <style name="Widget.Theme.LoungeBar.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    <!-- Estilo personalizado para os botões -->
+    <style name="CustomButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/graphite_gray</item> <!-- Cor grafite -->
+        <item name="android:textColor">#FFFFFF</item> <!-- Cor do texto do botão -->
+    </style>
+
+    <style name="Theme.LoungeBar.NoActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.LoungeBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.LoungeBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="ThemeOverlay.LoungeBar.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
     </style>
 </resources>

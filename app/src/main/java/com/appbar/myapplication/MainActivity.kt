@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +16,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.appbar.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        // Configurar FloatingActionButton visivel com base na navegação de deestino
+        // Configurar FloatingActionButton visível com base na navegação de destino
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.nav_home || destination.id == R.id.nav_gallery) {
                 binding.appBarMain.fab.visibility = View.VISIBLE
@@ -95,7 +94,47 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
+        updateMenu(menu) // Atualiza o menu com base no estado de login
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_login -> {
+                startActivity(Intent(this, LoginActivity::class.java))
+                true
+            }
+            R.id.action_register -> {
+                startActivity(Intent(this, RegisterActivity::class.java))
+                true
+            }
+            R.id.action_logout -> {
+                logoutUser()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun updateMenu(menu: Menu) {
+        val isLoggedIn = isUserLoggedIn()
+        menu.findItem(R.id.action_login).isVisible = !isLoggedIn
+        menu.findItem(R.id.action_register).isVisible = !isLoggedIn
+        menu.findItem(R.id.action_logout).isVisible = isLoggedIn
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        // Adicione a lógica para verificar se o usuário está logado
+        // Exemplo:
+        // return FirebaseAuth.getInstance().currentUser != null
+        return false
+    }
+
+    private fun logoutUser() {
+        // Adicione a lógica para deslogar o usuário
+        // Exemplo:
+        // FirebaseAuth.getInstance().signOut()
+        recreate()
     }
 
     override fun onSupportNavigateUp(): Boolean {

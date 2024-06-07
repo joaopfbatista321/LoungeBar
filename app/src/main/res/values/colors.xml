@@ -15,4 +15,13 @@
     <color name="burnt_yellow">#DAA520</color>
     <color name="graphite_gray">#474A51</color>
     <color name="primary_material_dark">#303030</color>
+    <color name="colorPrimary">#474A51</color>
+    <color name="colorPrimaryVariant">#2E2F33</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorError">#B00020</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#000000</color>
 </resources>
