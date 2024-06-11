@@ -1,0 +1,10 @@
+{
+    "PostgreSQL":
+        {
+            "user": "postgres",
+            "host": "viaduct.proxy.rlwy.net",
+            "database": "railway",
+            "password": "niqZMAlyNjXuzAusyoIUAhkILUGbeCxJ",
+            "port": "18400"
+        }
+}
