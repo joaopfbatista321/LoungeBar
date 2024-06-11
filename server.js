@@ -1,16 +1,20 @@
 const express = require('express');
+const cors = require('cors')
 const bodyParser = require('body-parser');
 const pool  = require('./db');
 const app = express();
-const port = 3000;
+
 
 
 
 // Middleware
-app.use(bodyParser.json());
+// configure express to use json as middle-ware
+app.use(cors());
+app.use(express.json({limit: '200mb'}));
 
 // Rota de registro
 app.post('/register', async (req, res) => {
+  
   const { username, password, role } = req.body;
   const sql = 'INSERT INTO users (username, password, role) VALUES ($1, $2, $3)';
   try {
@@ -38,7 +42,7 @@ app.post('/login', async (req, res) => {
     res.status(500).send('Erro ao realizar login');
   }
 });
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em ${PORT}`);
 });
