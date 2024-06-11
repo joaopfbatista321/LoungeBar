@@ -1,59 +1,42 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2');
+const pool  = require('./db');
 const app = express();
 const port = 3000;
 
-// Conexão com o banco de dados MariaDB
-const db = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root', // substitua pelo usuário do seu banco de dados
-  password: 'root', // substitua pela senha do seu banco de dados
-  database: 'Lounge'
-});
 
-// Conectar ao banco de dados
-db.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao MariaDB:', err);
-    return;
-  }
-  console.log('Conectado ao MariaDB');
-});
 
 // Middleware
 app.use(bodyParser.json());
 
 // Rota de registro
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
   const { username, password, role } = req.body;
-  const sql = 'INSERT INTO users (username, password, role) VALUES (?, ?, ?)';
-  db.query(sql, [username, password, role], (err, result) => {
-    if (err) {
-      console.error('Erro ao registrar usuário:', err);
-      res.status(500).send('Erro ao registrar usuário');
-      return;
-    }
+  const sql = 'INSERT INTO users (username, password, role) VALUES ($1, $2, $3)';
+  try {
+    const result = await pool.query(sql, [username, password, role]);
     res.send('Usuário registrado com sucesso');
-  });
+  } catch (err) {
+    console.error('Erro ao registrar usuário:', err);
+    res.status(500).send('Erro ao registrar usuário');
+  }
 });
 
 // Rota de login
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  const sql = 'SELECT * FROM users WHERE username = ? AND password = ?';
-  db.query(sql, [username, password], (err, results) => {
-    if (err) {
-      console.error('Erro ao realizar login:', err);
-      res.status(500).send('Erro ao realizar login');
-      return;
-    }
-    if (results.length > 0) {
+  const sql = 'SELECT * FROM users WHERE username = $1 AND password = $2';
+  try {
+    const results = await pool.query(sql, [username, password]);
+    if (results.rows.length > 0) {
       res.send('Login bem-sucedido');
     } else {
       res.status(401).send('Credenciais inválidas');
     }
-  });
+  } catch (err) {
+    console.error('Erro ao realizar login:', err);
+    res.status(500).send('Erro ao realizar login');
+  }
 });
 
 app.listen(port, () => {
