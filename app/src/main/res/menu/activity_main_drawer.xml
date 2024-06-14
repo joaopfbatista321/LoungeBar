@@ -17,6 +17,11 @@
             android:id="@+id/nav_qr_reader"
             android:icon="@drawable/ic_qrcode"
             android:title="@string/QRCode" />
+        <item
+            android:id="@+id/nav_change_language"
+            android:icon="@drawable/ic_language"
+            android:title="@string/change_language" />
+
     </group>
 
 </menu>

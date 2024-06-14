@@ -36,7 +36,7 @@
         android:id="@+id/subText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descubra nossos eventos e menu especial"
+        android:text="@string/discover_our_events_and_special_menu"
         android:textSize="16sp"
         android:textColor="@android:color/darker_gray"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText"
@@ -60,11 +60,13 @@
         android:id="@+id/eventsButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Eventos"
+        android:text="@string/events"
         style="@style/CustomButton"
         app:layout_constraintTop_toBottomOf="@+id/menuButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.8"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,9 @@
 package com.appbar.myapplication
 
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -8,14 +11,17 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.appbar.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        loadLocale()  // Carregar configuração de idioma antes de qualquer outra coisa
         super.onCreate(savedInstanceState)
 
         // Configurar view binding
@@ -47,6 +54,23 @@ class MainActivity : AppCompatActivity() {
         // Configurar navigation controller com a navigation view
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        // Listener para o NavigationView
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_change_language -> {
+                    showChangeLanguageDialog()
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                else -> {
+                    // Para outros itens, deixe o NavigationUI lidar com isso
+                    NavigationUI.onNavDestinationSelected(menuItem, navController)
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+            }
+        }
 
         // Configurar FloatingActionButton visível com base na navegação de destino
         navController.addOnDestinationChangedListener { _, destination, _ ->
@@ -135,6 +159,41 @@ class MainActivity : AppCompatActivity() {
         // Exemplo:
         // FirebaseAuth.getInstance().signOut()
         recreate()
+    }
+
+    private fun showChangeLanguageDialog() {
+        val languages = arrayOf(getString(R.string.language_english), getString(R.string.language_portuguese))
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.choose_language))
+        builder.setItems(languages) { dialog, which ->
+            when (which) {
+                0 -> setLocale("en") // English
+                1 -> setLocale("pt") // Portuguese
+            }
+            recreate() // Recria a atividade para aplicar a mudança de idioma
+        }
+        builder.show()
+    }
+
+    private fun setLocale(language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+
+        // Salva a configuração de idioma
+        val editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
+        editor.putString("My_Lang", language)
+        editor.apply()
+    }
+
+    private fun loadLocale() {
+        val sharedPreferences = getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val language = sharedPreferences.getString("My_Lang", "")
+        if (!language.isNullOrEmpty()) {
+            setLocale(language)
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

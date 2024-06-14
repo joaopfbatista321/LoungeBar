@@ -5,4 +5,25 @@
     <string name="menu_gallery">Galeria</string>
     <string name="menu_maps">Mapa</string>
     <string name="bem_vindo_ao_lounge">Bem-vindo ao Lounge</string>
+    <string name="next">Proximo</string>
+    <string name="Back">Voltar</string>
+    <string name="action_sign_in_short">Registar</string>
+    <string name="welcome">Bem Vindo!</string>
+    <string name="events">Eventos</string>
+    <string name="action_settings">Defenições</string>
+    <string name="default_event_title">Titulo do Evento</string>
+    <string name="default_event_description">Descrição do evento</string>
+    <string name="welcome_to_events">Bem vundo aos Eventos</string>
+    <string name="view_results">Ver Resultados</string>
+
+        <string name="menu_button">Menu</string>
+        <string name="events_button">Eventos</string>
+        <string name="change_language">Mudar Idioma</string>
+        <string name="choose_language">Escolher Idioma</string>
+        <string name="language_english">Inglês</string>
+        <string name="language_portuguese">Português</string>
+    <string name="discover_our_events_and_special_menu">Descobre os nossos E
+        ventos e o nosso Menu</string>
+
+
 </resources>

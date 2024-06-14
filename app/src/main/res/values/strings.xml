@@ -16,12 +16,12 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="QRCode" translatable="false">QRCode</string>
-    <string name="bem_vindo_ao_lounge">Bem-vindo ao Lounge</string>
+    <string name="bem_vindo_ao_lounge">Welcome to Lounge</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
@@ -34,6 +34,12 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="menu_button">Menu</string>
+    <string name="events_button">Events</string>
+
+    <string name="choose_language">Choose Language</string>
+    <string name="language_english">English</string>
+    <string name="language_portuguese">Portuguese</string>
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
@@ -70,4 +76,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="Back">Back</string>
+    <string name="welcome_to_events">Welcome to Events</string>
+    <string name="events">Events</string>
+    <string name="view_results">View Results</string>
+    <string name="lounge_bar" translatable="false">Lounge Bar</string>
+    <string name="change_language">change language</string>
+    <string name="discover_our_events_and_special_menu">Discover our events and special menu</string>
 </resources>

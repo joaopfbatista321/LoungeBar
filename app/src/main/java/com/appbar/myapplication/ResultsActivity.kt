@@ -1,6 +1,7 @@
 package com.appbar.myapplication
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,6 +10,12 @@ class ResultsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_results)
 
+        val backButton = findViewById<Button>(R.id.btnBack)
+
+        // Configura o ouvinte de clique para o botão Voltar
+        backButton.setOnClickListener {
+            finish()  // Fecha a atividade atual
+        }
         val textViewResults = findViewById<TextView>(R.id.textViewResults)
         val bundle = intent.getBundleExtra("qrBundle")
 
@@ -44,6 +51,7 @@ class ResultsActivity : AppCompatActivity() {
 
         textViewResults.text = summary
     }
+
 }
 
 
