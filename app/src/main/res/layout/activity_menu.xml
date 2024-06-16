@@ -35,9 +35,10 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Voltar"
+        android:text="@string/Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        style="@style/CustomButton"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

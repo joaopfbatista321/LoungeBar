@@ -25,12 +25,14 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login"
+        style="@style/CustomButton"/>
 
     <Button
         android:id="@+id/btn_go_to_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Register" />
+        android:text="Go to Register"
+        style="@style/CustomButton"/>
 
 </LinearLayout>

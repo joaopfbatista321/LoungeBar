@@ -12,7 +12,7 @@
         android:layout_width="361dp"
         android:layout_height="277dp"
         android:layout_marginTop="150dp"
-        android:src="@mipmap/ic_lounge_logo"
+        android:src="@mipmap/ic_logo"
         app:layout_constraintBottom_toTopOf="@+id/welcomeText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

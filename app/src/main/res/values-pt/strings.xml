@@ -24,6 +24,10 @@
         <string name="language_portuguese">Português</string>
     <string name="discover_our_events_and_special_menu">Descobre os nossos E
         ventos e o nosso Menu</string>
+    <string name="weather">Tempo</string>
+    <string name="humidity">Humidade</string>
+    <string name="wind">Vento</string>
+    <string name="emitente_adquirente_pa_s_do_adquirente_tipo_de_documento_estado_do_documento_data_do_documento_identifica_o_do_documento_atcud_total_de_impostos_total_com_impostos_hash_n_mero_do_certificado">"            Emitente: %1$s            Adquirente: %2$s             País do Adquirente: %3$s              Tipo de Documento: %4$s                Estado do Documento: %5$s                                          Data do Documento: %6$s            Identificação do Documento: %7$s            ATCUD: %8$s            Total de Impostos: %9$s            Total com Impostos: %10$s            Hash: %11$s            Número do Certificado: %12$s        "</string>
 
 
 </resources>

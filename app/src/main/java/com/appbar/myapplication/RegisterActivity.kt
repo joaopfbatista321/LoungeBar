@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun registerUser(user: User) {
-        RetrofitClient.instance.register(user)
+       RetrofitClient.instance.register(user)
             .enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     if (response.isSuccessful) {

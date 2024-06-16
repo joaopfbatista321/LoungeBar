@@ -34,20 +34,21 @@ class ResultsActivity : AppCompatActivity() {
         val numCertificado = bundle?.getString("R") ?: "N/A"
 
         // Formatação da string para exibição
-        val summary = """
-            Emitente: $emitente
-            Adquirente: $adquirente
-            País do Adquirente: $paisAdquirente
-            Tipo de Documento: $tipoDocumento
-            Estado do Documento: $estadoDocumento
-            Data do Documento: $dataDocumento
-            Identificação do Documento: $identificacaoDocumento
-            ATCUD: $atcud
-            Total de Impostos: $impostos
-            Total com Impostos: $totalComImpostos
-            Hash: $hash
-            Número do Certificado: $numCertificado
-        """.trimIndent()
+        val summary = getString(
+            R.string.emitente_adquirente_pa_s_do_adquirente_tipo_de_documento_estado_do_documento_data_do_documento_identifica_o_do_documento_atcud_total_de_impostos_total_com_impostos_hash_n_mero_do_certificado,
+            emitente,
+            adquirente,
+            paisAdquirente,
+            tipoDocumento,
+            estadoDocumento,
+            dataDocumento,
+            identificacaoDocumento,
+            atcud,
+            impostos,
+            totalComImpostos,
+            hash,
+            numCertificado
+        ).trimIndent()
 
         textViewResults.text = summary
     }

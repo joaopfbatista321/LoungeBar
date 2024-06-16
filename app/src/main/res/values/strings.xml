@@ -83,4 +83,8 @@
     <string name="lounge_bar" translatable="false">Lounge Bar</string>
     <string name="change_language">change language</string>
     <string name="discover_our_events_and_special_menu">Discover our events and special menu</string>
+    <string name="weather">weather</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="emitente_adquirente_pa_s_do_adquirente_tipo_de_documento_estado_do_documento_data_do_documento_identifica_o_do_documento_atcud_total_de_impostos_total_com_impostos_hash_n_mero_do_certificado">"\n            Issuer: %1$s\n            Buyer: %2$s\n            Buyer's Country: %3$s\n            Document Type: %4$s\n            Document Status: %5$s\n            Document Date: %6$s\n            Document ID: %7$s\n            ATCUD: %8$s\n            Total Taxes: %9$s\n            Total with Taxes: %10$s\n            Hash: %11$s\n            Certificate Number: %12$s\n        "</string>
 </resources>

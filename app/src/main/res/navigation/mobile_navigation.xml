@@ -36,6 +36,12 @@
         tools:layout="@layout/fragment_qr_reader" />
 
     <fragment
+        android:id="@+id/nav_weather"
+        android:name="com.appbar.myapplication.WeatherFragment"
+        android:label="@string/weather"
+        tools:layout="@layout/fragment_weather" />
+
+    <fragment
         android:id="@+id/nav_events"
         android:name="com.appbar.myapplication.EventsFragment"
         android:label="Events"
