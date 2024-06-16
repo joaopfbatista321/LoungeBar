@@ -10,10 +10,10 @@
     <string name="action_sign_in_short">Registar</string>
     <string name="welcome">Bem Vindo!</string>
     <string name="events">Eventos</string>
-    <string name="action_settings">Defenições</string>
+    <string name="action_settings">Definições</string>
     <string name="default_event_title">Titulo do Evento</string>
     <string name="default_event_description">Descrição do evento</string>
-    <string name="welcome_to_events">Bem vundo aos Eventos</string>
+    <string name="welcome_to_events">Bem vindo aos Eventos</string>
     <string name="view_results">Ver Resultados</string>
 
         <string name="menu_button">Menu</string>
